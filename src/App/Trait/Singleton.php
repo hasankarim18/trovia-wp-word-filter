@@ -1,6 +1,6 @@
 <?php
 
-namespace Hasan\OurFirstUniquePlugin\App\Trait;
+namespace Hasan\TroviaWpWordcount\App\Trait;
 
 trait Singleton
 {
