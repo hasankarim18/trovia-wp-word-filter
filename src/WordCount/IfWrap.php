@@ -29,26 +29,38 @@ class IfWrap
 
     function createHTML($content)
     {
+        $headline = esc_html(get_option('wcp_headline_text', 'Hello world!'));
 
-        $html = '<h3>' . esc_html(get_option('wcp_headline_text', 'Hello world!')) . '</h3><p>';
-        // 
-        if (get_option('wcp_show_word_count', '1') OR get_option('wcp_show_read_time', '1')) {
+        $showWord = get_option('wcp_show_word_count', '1');
+        $showChar = get_option('wcp_enable_character_count', '1');
+        $showRead = get_option('wcp_show_read_time', '1');
+
+        if ($showWord || $showRead) {
             $wordCount = str_word_count(strip_tags($content));
         }
+        ob_start();
+        ?>
+        <div class="wcp-box">
+            <h3><?php echo $headline; ?></h3>
 
+            <?php if ($showWord): ?>
+                <p style="margin:0; padding:0; margin-bottom: 5px;">This post has <?php echo $wordCount; ?> words.</p>
+            <?php endif; ?>
 
+            <?php if ($showChar): ?>
+                <p style="margin:0; padding:0; margin-bottom: 5px;">This post has <?php echo strlen(strip_tags($content)); ?>
+                    characters.</p>
+            <?php endif; ?>
 
-        if (get_option('wcp_show_word_count', '1')) {
-            $html = $html . '<p>' . esc_html(__('This post has:', 'TroviaWcpDomain')) . $wordCount . ' words. </p>';
-        }
-        if (get_option('wcp_enable_character_count', '1')) {
-            $html = $html . '<p>' . esc_html(__('This post has:', 'TroviaWcpDomain')) . strlen(strip_tags($content)) . ' characters.</p>';
-        }
-        if (get_option('wcp_show_read_time', '1')) {
-            $html = $html . '<p>Read time : ' . round($wordCount / 200) . ' miniute(s).</p>';
-        }
+            <?php if ($showRead): ?>
+                <p style="margin:0; padding:0; margin-bottom: 5px;">Read time: <?php echo round($wordCount / 200); ?> minute(s).</p>
+            <?php endif; ?>
+            <hr>
+        </div>
 
-        $html .= '</p>';
+        <?php
+
+        $html = ob_get_clean();
 
 
 
