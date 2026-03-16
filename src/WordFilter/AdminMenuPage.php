@@ -23,7 +23,7 @@ class AdminMenuPage
     {
         ?>
         <div class="wrap">
-            <h1>Trovia WP Word Filter Settings</h1>
+            <h1>Options</h1>
         </div>
 
         <?php

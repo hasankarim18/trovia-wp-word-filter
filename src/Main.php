@@ -17,26 +17,10 @@ class Main
     public $wordFilter;
     public function init()
     {
-        $this->define_constance();
 
         add_action('plugins_loaded', [$this, 'plugins_loaded']);
     }
 
-    public function define_constance()
-    {
-        define('TWF_PLUGIN_VERSION', '1.0.0');
-        define('TWF_FIRST_UNIQUE_PLUGIN_AUTHOR', 'Hasan');
-
-        define(
-            'TWF_PLUGIN_URL',
-            plugin_dir_url(dirname(__DIR__))
-        );
-
-        define(
-            'TWF_PLUGIN_PATH',
-            plugin_dir_path(dirname(__DIR__))
-        );
-    }
 
     public function plugins_loaded()
     {
