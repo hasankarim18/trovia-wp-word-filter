@@ -10,23 +10,23 @@ class AdminMenuPage
 {
     public function word_filter_html()
     {
-        ?>
-        <div class="wrap">
-            <h1>Trovia WP Word Filter</h1>
-        </div>
+        $file = __DIR__ . '/views/main-page.php';
 
-        <?php
+        if (file_exists($file)) {
+            include_once($file);
+            ;
+        }
 
     }
 
-    public function word_filter_settings_html()
+    public function word_filter_options_html()
     {
-        ?>
-        <div class="wrap">
-            <h1>Options</h1>
-        </div>
+        $file = __DIR__ . '/views/options-page.php';
 
-        <?php
+        if (file_exists($file)) {
+            include_once($file);
+            ;
+        }
 
     }
 }

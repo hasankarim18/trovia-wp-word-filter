@@ -22,7 +22,7 @@ class AdminMenu
     }
     public function admin_menu()
     {
-        add_menu_page(
+        $mainPageHook = add_menu_page(
             'Word Filter',
             'Word Filter',
             'manage_options',
@@ -55,8 +55,17 @@ class AdminMenu
             'Options',
             'manage_options',
             'trovia-wp-word-filter-settings',
-            [$this->adminMenuPage, 'word_filter_settings_html'],
+            [$this->adminMenuPage, 'word_filter_options_html'],
         );
+
+        // laod css 
+        add_action("load-{$mainPageHook}", [$this, 'mainPageAssests']);
+
+    }
+
+    function mainPageAssests()
+    {
+        wp_enqueue_style('filterAdminCss', TWF_PLUGIN_URL . 'styles.css');
 
     }
 
