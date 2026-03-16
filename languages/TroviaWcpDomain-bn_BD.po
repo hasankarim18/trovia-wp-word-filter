@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Trovia wp wordcount\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 13:13+0000\n"
+"PO-Revision-Date: 2026-03-16 13:15+0000\n"
+"Last-Translator: Hasan\n"
+"Language-Team: Bengali (Bangladesh)\n"
+"Language: bn_BD\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.3; wp-6.9.4; php-8.2.27\n"
+"X-Domain: TroviaWcpDomain"
+
+#. Author of the plugin
+msgid "Hasan Karim"
+msgstr ""
+
+#. Description of the plugin
+msgid "This is a simple plugin that does something Unique."
+msgstr ""
+
+#: src/WordCount/IfWrap.php:42 src/WordCount/IfWrap.php:45
+msgid "This post has:"
+msgstr "এই পোস্টে আছে "
+
+#. Name of the plugin
+msgid "Trovia wp wordcount"
+msgstr ""
+
+#: src/WordCount/AdminMenu.php:23
+msgid "Word Count"
+msgstr ""

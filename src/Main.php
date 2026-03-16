@@ -9,6 +9,10 @@ use Hasan\TroviaWpWordcount\App\Trait\Singleton;
 // use Hasan\TroviaWpWordcount\BlogContentEdit\BlogContentEdit;
 use Hasan\TroviaWpWordcount\WordCount\WordCount;
 
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 
 class Main
 {
@@ -42,9 +46,9 @@ class Main
     public function plugins_loaded()
     {
         load_plugin_textdomain(
-            'our-first-unique-plugin',
+            'TroviaWcpDomain',
             false,
-            dirname(plugin_basename(dirname(__DIR__))) . '/languages'
+            dirname(plugin_basename(dirname(__FILE__))) . '/languages'
         );
         // load classes
         $this->load_classes();

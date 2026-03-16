@@ -20,7 +20,7 @@ class AdminMenu
     {
         add_options_page(
             'Word Count Settings',
-            'Word Count',
+            __('Word Count', 'TroviaWcpDomain'),
             'manage_options',
             'trovia-wordcount-settings',
             [$this->settingsPage, 'render']

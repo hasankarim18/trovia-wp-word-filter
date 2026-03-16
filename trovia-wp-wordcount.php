@@ -7,6 +7,8 @@
     Author: Hasan Karim
     Author URI:
     License: GPL2 or later
+    Text Domain: TroviaWcpDomain
+    Domain Path: /languages
 */
 // namespace Hasan\OurFirstUniquePlugin;
 

@@ -1,6 +1,12 @@
 <?php
 
+
+
 namespace Hasan\TroviaWpWordcount\WordCount;
+
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 class Settings
 {
