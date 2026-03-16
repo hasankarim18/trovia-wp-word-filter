@@ -54,5 +54,6 @@ class Main
     {
         $this->wordCount = new WordCount();
         $this->wordCount->init();
+
     }
 }
