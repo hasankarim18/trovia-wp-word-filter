@@ -1,6 +1,10 @@
 <?php
+namespace Hasan\TroviaWpWordFilter\App\Trait;
+// namespace Hasan\TroviaWpWordcount\App\Trait;
 
-namespace Hasan\TroviaWpWordcount\App\Trait;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 trait Singleton
 {

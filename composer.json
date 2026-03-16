@@ -1,8 +1,8 @@
 {
-  "name": "hasan/trovia-wp-wordcount",
+  "name": "hasan/trovia-wp-word-filter",
   "autoload": {
     "psr-4": {
-      "Hasan\\TroviaWpWordcount\\": "src/"
+      "Hasan\\TroviaWpWordFilter\\": "src/"
     }
   },
   "authors": [
