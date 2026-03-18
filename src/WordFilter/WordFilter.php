@@ -10,10 +10,14 @@ class WordFilter
 {
     private AdminMenu $adminMenu;
     private AdminMenuPage $adminMenuPage;
+    private FilterContent $filterContent;
+
     public function __construct()
     {
         $this->adminMenuPage = new AdminMenuPage();
         $this->adminMenu = new AdminMenu($this->adminMenuPage);
+        $this->filterContent = new FilterContent();
+
     }
 
     public function init()
@@ -25,6 +29,8 @@ class WordFilter
     {
 
         $this->adminMenu->register();
+        $this->filterContent->register();
+
     }
 
 

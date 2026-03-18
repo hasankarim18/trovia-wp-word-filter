@@ -10,6 +10,12 @@ if (!defined('ABSPATH')) {
 
 class AdminMenuPage
 {
+    public function register()
+    {
+        add_action('admin_init', [$this, 'option_settings']);
+
+    }
+
 
     public function handleForm()
     {
@@ -54,6 +60,30 @@ class AdminMenuPage
             include_once($file);
 
         }
+
+    }
+
+    public function option_settings()
+    {
+        add_settings_section(
+            'replacement-text-section',
+            null,
+            function () {
+                echo '<h1><u>Word Filter Options</u></h1>';
+            },
+            'trovia-wp-word-filter-settings'
+        );
+        register_setting('replacementFields', 'replacementText');
+        add_settings_field('replacement-text', 'Filtered Text', array($this, 'replacementFieldHTML'), 'trovia-wp-word-filter-settings', 'replacement-text-section');
+    }
+
+
+    public function replacementFieldHTML()
+    {
+        ?>
+        <input type="text" name="replacementText" value="<?php echo esc_attr(get_option('replacementText', '***')) ?>">
+        <p class="description">Leave blank to simply remove the filtered words.</p>
+        <?php
 
     }
 
